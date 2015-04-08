@@ -26,3 +26,5 @@ jar {
         attributes 'Main-Class': 'me.gserv.chocoserv.Main'
     }
 }
+
+defaultTasks 'shadowJar'
