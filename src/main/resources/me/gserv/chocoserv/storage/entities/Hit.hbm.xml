@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="me.gserv.chocoserv.storage.entities">
+    <class name="Hit" table="HIT">
+        <id name="id">
+            <generator class="increment"/>
+        </id>
+
+        <property name="hits"/>
+        <property name="page"/>
+    </class>
+</hibernate-mapping>

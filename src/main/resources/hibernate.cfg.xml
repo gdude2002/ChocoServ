@@ -38,6 +38,6 @@
 
         <!-- Mappings -->
         <mapping resource="me/gserv/chocoserv/storage/entities/Comment.hbm.xml"/>
-
+        <mapping resource="me/gserv/chocoserv/storage/entities/Hit.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
