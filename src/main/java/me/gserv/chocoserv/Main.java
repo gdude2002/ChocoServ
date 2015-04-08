@@ -1,11 +1,10 @@
 package me.gserv.chocoserv;
 
 import com.beust.jcommander.JCommander;
+import me.gserv.chocoserv.routes.*;
 import me.gserv.chocoserv.storage.StorageManager;
 import org.rythmengine.Rythm;
 import spark.Spark;
-
-import me.gserv.chocoserv.routes.HelloRoute;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +33,10 @@ public class Main {
         Spark.staticFileLocation("/static");
 
         // Simple "Hello World" route
+        Spark.get("/", new IndexRoute());
+        Spark.get("/addresses", new AddressesRoute());
+        Spark.get("/comments", new CommentsRoute());
+        Spark.get("/store", new StoreRoute());
         Spark.get("/hello", new HelloRoute());
     }
 }
