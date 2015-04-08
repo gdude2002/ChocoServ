@@ -1,11 +1,15 @@
 package me.gserv.chocoserv;
 
-import static spark.Spark.*;
+import spark.Spark;
 
 import me.gserv.chocoserv.routes.HelloRoute;
 
 public class Main {
     public static void main(String ... args) {
-        get("/hello", new HelloRoute());
+        // Set location of static files
+        Spark.staticFileLocation("/static");
+
+        // Simple "Hello World" route
+        Spark.get("/hello", new HelloRoute());
     }
 }
