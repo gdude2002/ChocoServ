@@ -5,6 +5,8 @@ public class Hit {
     private Long hits;
     private String page;
 
+    public Hit() {}
+
     public Hit(Long hits, String page) {
         this.hits = hits;
         this.page = page;

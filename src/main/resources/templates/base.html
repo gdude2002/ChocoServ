@@ -14,35 +14,35 @@
 </head>
 <body>
 <div class="ui large pointing menu">
-    @if (page.equalsIgnoreCase("home")) {
-        <a class="green active item" href="/"><i class="green home icon"></i> Home</a>
-    } else {
-        <a class="item" href="/"><i class="home icon"></i> Home</a>
-    }
+@if (page.equalsIgnoreCase("home")) {
+    <a class="green active item" href="/"><i class="green home icon"></i> Home</a>
+} else {
+    <a class="item" href="/"><i class="home icon"></i> Home</a>
+}
 
-    @if (page.equalsIgnoreCase("addresses")) {
-        <a class="green active item" href="/addresses"><i class="green users icon"></i> Addresses</a>
-    } else {
-        <a class="item" href="/addresses"><i class="users icon"></i> Addresses</a>
-    }
+@if (page.equalsIgnoreCase("addresses")) {
+    <a class="green active item" href="/addresses"><i class="green users icon"></i> Addresses</a>
+} else {
+    <a class="item" href="/addresses"><i class="users icon"></i> Addresses</a>
+}
 
-    @if (page.equalsIgnoreCase("comments")) {
-        <a class="green active item" href="/comments"><i class="green comments icon"></i> Comments</a>
-    } else {
-        <a class="item" href="/comments"><i class="comments icon"></i> Comments</a>
-    }
+@if (page.equalsIgnoreCase("comments")) {
+    <a class="green active item" href="/comments"><i class="green comments icon"></i> Comments</a>
+} else {
+    <a class="item" href="/comments"><i class="comments icon"></i> Comments</a>
+}
 
-    @if (page.equalsIgnoreCase("store")) {
-        <a class="green active item" href="/store"><i class="green shop icon"></i> Store</a>
-    } else {
-        <a class="item" href="/store"><i class="shop icon"></i> Store</a>
-    }
+@if (page.equalsIgnoreCase("store")) {
+    <a class="green active item" href="/store"><i class="green shop icon"></i> Store</a>
+} else {
+    <a class="item" href="/store"><i class="shop icon"></i> Store</a>
+}
 
-    @if (page.equalsIgnoreCase("hello")) {
-        <a class="green active item" href="/hello"><i class="green copyright icon"></i> Hello</a>
-    } else {
-        <a class="item" href="/hello"><i class="copyright icon"></i> Hello</a>
-    }
+@if (page.equalsIgnoreCase("hello")) {
+    <a class="green active item" href="/hello"><i class="green copyright icon"></i> Hello</a>
+} else {
+    <a class="item" href="/hello"><i class="copyright icon"></i> Hello</a>
+}
 </div>
 
 <div class="wrapper">

@@ -1,21 +1,23 @@
-@extends("base.html", title: "ChocoServ | Store", page: "store")
+@args Long hits
+@extends("base.html", "ChocoServ | Store", @hits, "store")
 
 <div class="ui segment">
     <!--<h1>Store</h1>-->
     <div class="ui divided items">
         <div class="item">
-            <div class="rounded bordered image">
+            <div class="image">
                 <img src="/images/assorted-chocolate.jpg" />
             </div>
             <div class="content">
                 <a class="header">Assorted squares</a>
                 <div class="meta">
-                    <span>&euro;10.25</span>
+                    <span>&euro;15.00</span>
                 </div>
                 <div class="description">
                     <p>
-                        One package containing 50 assorted squares of real plain, white and dark chocolate. May contain
-                        milk, sugar and varying levels of cocoa, but definitely no cockroaches.
+                        One package containing 100 assorted squares of real plain, white and dark chocolate. May contain
+                        milk, sugar and varying levels of cocoa, but definitely no cockroaches. It's a legal
+                        requirement, we'll have you know.
                     </p>
                 </div>
 
@@ -32,7 +34,7 @@
         </div>
 
         <div class="item">
-            <div class="rounded bordered image">
+            <div class="image">
                 <img src="/images/gold-chocolate.jpg" />
             </div>
             <div class="content">
@@ -44,7 +46,8 @@
                     <p>
                         For those of us that were born with a silver spoon, we present this gilded bar of
                         average-quality chocolate. The wrapper is made of real, pure gold, and while the chocolate
-                        itself isn't fantastic, we feel that you may have other things to worry about. Right?
+                        itself isn't fantastic, we feel that you may have other things to worry about - Like finding
+                        someone to clean that diamond-studded swimming pool, right?
                     </p>
                 </div>
 
@@ -61,7 +64,7 @@
         </div>
 
         <div class="item">
-            <div class="rounded bordered image">
+            <div class="image">
                 <img src="/images/pink-chocolate.jpg" />
             </div>
             <div class="content">
@@ -72,10 +75,15 @@
                 <div class="description">
                     <p>
                         Are you a girl? Do you know any girls? Can you justify this purchase of an entire kilogram
-                        of pink chocolate chips to your friends and family?
+                        of pink chocolate chips to your friends and family? Who cares!
                     </p>
                     <p>
-                        We think you should just ignore these stupid gender norms and stuff your face.
+                        We think you should just ignore these stupid gender norms and stuff your face. Don't you
+                        agree?
+                    </p>
+
+                    <p>
+                        <small>That's what we thought.</small>
                     </p>
                 </div>
 
@@ -92,3 +100,9 @@
         </div>
     </div>
 </div>
+
+@section(hits) {
+<div class="ui segment">
+    <p>Page hits: @hits</p>
+</div>
+}

@@ -1,7 +1,13 @@
-@args String who
-@extends("base.html", title: "ChocoServ | Hello", page: "hello")
+@args String who, Long hits
+@extends("base.html", "ChocoServ | Hello", @hits, "hello")
 
 <div class="ui segment">
     <h1>Hello, @who! Get some ears!</h1>
     <img class="ui centered rounded bordered image" src="/images/ears.jpg" />
 </div>
+
+@section(hits) {
+<div class="ui segment">
+    <p>Page hits: @hits</p>
+</div>
+}

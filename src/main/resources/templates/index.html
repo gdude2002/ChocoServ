@@ -1,6 +1,13 @@
-@extends("base.html", title: "ChocoServ | Home", page: "home")
+@args Long hits
+@extends("base.html","ChocoServ | Home", @hits, "home")
 
 <div class="ui segment">
     <h1>Index page</h1>
     <img class="ui centered rounded bordered image" src="https://placekitten.com/g/600/400"/>
 </div>
+
+@section(hits) {
+<div class="ui segment">
+    <p>Page hits: @hits</p>
+</div>
+}
