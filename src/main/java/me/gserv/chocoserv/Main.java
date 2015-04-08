@@ -36,6 +36,7 @@ public class Main {
         Spark.get("/", new IndexRoute());
         Spark.get("/addresses", new AddressesRoute());
         Spark.get("/comments", new CommentsRoute());
+        Spark.post("/comments", new CommentsPostRoute());
         Spark.get("/store", new StoreRoute());
         Spark.get("/hello", new HelloRoute());
     }

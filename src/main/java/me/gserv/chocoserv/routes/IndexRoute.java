@@ -15,11 +15,9 @@ public class IndexRoute implements Route {
 
     @Override
     public Object handle(Request request, Response response) throws Exception {
-        Long hits = this.storageManager.incrementHits("home");
-
         return Rythm.render(
                 "index.html",
-                hits
+                this.storageManager.incrementHits("home")
         );
     }
 }

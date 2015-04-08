@@ -1,10 +1,13 @@
 package me.gserv.chocoserv.storage;
 
+import me.gserv.chocoserv.storage.entities.Comment;
 import me.gserv.chocoserv.storage.entities.Hit;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+
+import java.util.HashMap;
 
 public class StorageManager {
     private static StorageManager instance = null;
@@ -74,5 +77,33 @@ public class StorageManager {
         s.close();
 
         return h.getHits();
+    }
+
+    public HashMap<String, String> getComments() {
+        HashMap<String, String> comments = new HashMap<>();
+
+        Session s = this.getSession();
+        Query q = s.createQuery("SELECT c FROM Comment c");
+        q.setMaxResults(10);
+
+        Comment c;
+
+        for (Object r : q.list()) {
+            c = (Comment) r;
+
+            comments.put(c.getName(), c.getComment());
+        }
+
+        s.close();
+
+        return comments;
+    }
+
+    public void addComment(String name, String comment) {
+        Session s = this.getSession();
+        Comment c = new Comment(name, comment);
+        s.save(c);
+        s.flush();
+        s.close();
     }
 }

@@ -17,7 +17,8 @@ public class CommentsRoute implements Route {
     public Object handle(Request request, Response response) throws Exception {
         return Rythm.render(
                 "comments.html",
-                this.storageManager.incrementHits("comments")
+                this.storageManager.incrementHits("comments"),
+                this.storageManager.getComments()
         );
     }
 }

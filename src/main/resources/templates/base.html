@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-@args String title = "ChocoServ", Long hits = 0L, String page = "unknown"
+@args String title = "ChocoServ", String page = "unknown"
 
 <html>
 <head>
@@ -56,9 +56,7 @@
 }
 
 @render(hits) {
-    <div class="ui segment">
-        <p>Page hits: @hits</p>
-    </div>
+
 }
 </div>
 </body>
