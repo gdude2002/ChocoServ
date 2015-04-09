@@ -7,7 +7,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class StorageManager {
     private static StorageManager instance = null;
@@ -79,11 +81,11 @@ public class StorageManager {
         return h.getHits();
     }
 
-    public HashMap<String, String> getComments() {
-        HashMap<String, String> comments = new HashMap<>();
+    public List<Comment> getComments() {
+        List<Comment> comments = new ArrayList<>();
 
         Session s = this.getSession();
-        Query q = s.createQuery("SELECT c FROM Comment c");
+        Query q = s.createQuery("SELECT c FROM Comment c ORDER BY c.id DESC");
         q.setMaxResults(10);
 
         Comment c;
@@ -91,7 +93,7 @@ public class StorageManager {
         for (Object r : q.list()) {
             c = (Comment) r;
 
-            comments.put(c.getName(), c.getComment());
+            comments.add(c);
         }
 
         s.close();

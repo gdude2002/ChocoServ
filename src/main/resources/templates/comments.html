@@ -1,4 +1,5 @@
-@args Long hits, Map<String, String> comments, boolean error = false
+@import me.gserv.chocoserv.storage.entities.Comment
+@args Long hits, List<Comment> comments, boolean error = false
 @extends("base.html", "ChocoServ | Comments", "comments")
 
 @if(error) {
@@ -16,16 +17,16 @@
     <div class="ui comments">
         <h3 class="ui dividing header">Comments</h3>
 
-        @for (Map.Entry<String, String> entry : comments.entrySet()) {
+        @for (Comment c : comments) {
             <div class="comment">
                 <a class="avatar">
                     <img src="/images/avatar.jpg">
                 </a>
                 <div class="content">
-                    <a class="author">@entry.getKey()</a>
+                    <a class="author">@c.getName()</a>
                     <div class="text">
                         @escape("html") {
-                            @entry.getValue()
+                            @c.getComment()
                         }
                     </div>
                 </div>
